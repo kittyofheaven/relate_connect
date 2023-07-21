@@ -42,7 +42,7 @@ export default async function page({ params }) {
     return (
         <div>
             <div className='justify-center text-4xl text-center mt-10'>{questions[params.id - 1].question}</div>
-            <div className='text-center items-center justify-between'>
+            <div className='text-center items-center justify-between mt-4'>
                 <button className='mx-4 border-black border-b-4 border-r-4 bg-green-500 rounded-lg h-20 w-30 px-7'>Very unlike me</button>
                 <button className='mx-4 border-black border-b-4 border-r-4 bg-green-500 rounded-lg h-20 w-30 px-7'>Somewhat like me</button>
                 <button className='mx-4 border-black border-b-4 border-r-4 bg-green-500 rounded-lg h-20 w-30 px-7'>That's so me</button>
