@@ -39,6 +39,8 @@ export default async function page({ params }) {
         )
     }
 
+    
+
     return (
         <div>
             <div className='justify-center text-4xl text-center mt-10'>{questions[params.id - 1].question}</div>
