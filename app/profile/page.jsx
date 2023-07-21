@@ -1,16 +1,54 @@
 "use client"
 
-import React from 'react'
+import React, {useState} from 'react'
 import { signIn, signOut, useSession } from "next-auth/react";
 import { BiLogoGoogle } from 'react-icons/bi'
 import { PiGithubLogoBold } from 'react-icons/pi'
 import {GoSignOut} from 'react-icons/go'
+import db from '../../utils/dbconfig'
+import {
+    addDoc,
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    limit,
+    onSnapshot,
+    or,
+    orderBy,
+    query,
+    setDoc,
+    updateDoc,
+    where
+} from 'firebase/firestore'
                     
-export default function page() {
+export default  function page() {
 
     const {data : session} = useSession()
+    const [userUniqueId, setUserUniqueId] = useState('')
     
     if(session && session.user){
+
+
+        async function userUniqueIdFunc() {
+            
+            const email = session.user.email
+    
+            const user_ref = collection(db, 'users') //collection buat ngambil collection dari firestore
+            const q = query(user_ref, where('email', '==', email), limit(1))
+            const querySnapshot = await getDocs(q) //getDocs buat ngambil data dari query
+            const user_id = querySnapshot.docs[0].id //docs buat ngambil data dari querySnapshot
+
+            console.log(user_id)
+
+            setUserUniqueId(user_id)
+
+        }
+
+        userUniqueIdFunc()
+        
+
+
         return (
 
             //* PROFILE PAGE START
@@ -23,6 +61,7 @@ export default function page() {
                     <GoSignOut size={25} className='my-auto mr-2'/>
                     Sign out as {session.user.name}
                 </button>
+                <p>Unique id : {userUniqueId}</p>
             </div>
 
             //* PROFILE PAGE END
