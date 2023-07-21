@@ -4,7 +4,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { BiPaperPlane, BiUser } from "react-icons/bi";
 import { MdOutlineNotificationsNone } from "react-icons/md";
-import { getUserImage } from "../../utils/dbfunctions";
 import { useState, useEffect } from "react";
 
 export default function SigninButton () {

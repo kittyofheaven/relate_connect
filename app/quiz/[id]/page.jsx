@@ -17,6 +17,11 @@ import {
     where
 } from 'firebase/firestore'
 
+import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react'
+import { redirect } from 'next/navigation'
+
+
 const question_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
 async function getQuestions() {
@@ -27,7 +32,20 @@ async function getQuestions() {
     return questions
 }
 
+async function handleAnswerClick(id, answer){
+    
+}
+
 export default async function page({ params }) {
+
+    const {data: session} = useSession({
+        required: true,
+        onUnauthenticated: () => {
+            redirect('/')
+        }
+    })
+
+    console.log(session)
 
     const questions = await getQuestions()
     // console.log(questions)
@@ -39,7 +57,7 @@ export default async function page({ params }) {
         )
     }
 
-    
+
 
     return (
         <div>
