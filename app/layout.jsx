@@ -17,22 +17,20 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers>
 
-          <header className="bg-orange-700 flex items-center justify-between m-1 space-x-4">
-            <div className="flex flex-row items-center">
-              <Link href="/">
-              <img className="h-40 w-50" src='https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/realte_connect_logo-removebg-preview.png?alt=media&token=3b61c20a-63a9-4884-9ec5-50fb4169be46'/>
-          
-              </Link>
-            </div>
+          <div className="border-2 border-emerald-500 flex items-center justify-between -mt-6 space-x-1 ">
+
+            <Link href="/">
+              <img className="h-40 " src='https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/realte_connect_logo-removebg-preview.png?alt=media&token=3b61c20a-63a9-4884-9ec5-50fb4169be46' />
+            </Link>
+
             <div className="items-center flex min-w[300px] lg:w-[600px]">
               <input
                 placeholder="Say something about how things are going..."
-                className="w-full px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm"
+                className=" w-full px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm"
               ></input>
-              <div className="items-center"></div>
             </div>
             <SigninButton />
-          </header>
+          </div>
 
           {children}
 
