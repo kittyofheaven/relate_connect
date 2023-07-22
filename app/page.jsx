@@ -194,7 +194,7 @@ export default function Home() {
                 </div>
                 <h5 className='text-2xl font-medium mt-3 '>Auto Date Planner</h5>
                 <p className='text-md mt-3'>Ask an AI to plan a date for you, since you're too busy thinking about everything else! You may be busy but a date is always necessary if you still want to have a relationship. </p>
-                <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
+                <a href='/dateplanner' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
 
@@ -218,7 +218,7 @@ export default function Home() {
                 </div>
                 <h5 className='text-2xl font-medium mt-3 '>My Calendar</h5>
                 <p className='text-md mt-3'>Keeping track of dates are mundane, But through the calendar it would allow you to keep track of special events with you and your partner. For e.g, Birthdays, Anniversaries, etc. </p>
-                <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6  hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
+                <a href='/calendar' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6  hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
           </div>
