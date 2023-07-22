@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Inspiration
+RelateConnect is inspired by the many youths that went through a relationship prematurely and ended up scarring themself. RelateConnect isn't an app like Tinder, Bumble, etc. but its focused towards those who wants to go on a healthy, commitful relationship but falls hesitant for whatever reason., hence we call it "The Dating Companion App". We feel this topic is rarely discussed because we view it as part of "puberty" but the roots of some toxic relationships, abusive relationships, starts from not caring about this particular topic. 
 
-## Getting Started
+We followed one particular research from a Behavioural Scientist and Author "Logan Ury", we understood the "Three Tendencies of Dating" from her book "How To Not Die Alone". We based our database on her research and try to make it as objective as possible
 
-First, run the development server:
+We also followed our own personal experiences in dating, relationships w/o status, ending relationships prematurely, etc. to pursue the right features and find solutions to what could've been used back then. so you can bet your gits when we say it's personal and we want to make this work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## What it does
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## How we built it
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Challenges we ran into
 
-## Learn More
+## Accomplishments that we're proud of
 
-To learn more about Next.js, take a look at the following resources:
+## What we learned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## What's next for Relate Connect
