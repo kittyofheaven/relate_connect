@@ -11,7 +11,7 @@ export default function SearchBar() {
     }
 
     return (
-        <div className="items-center flex min-w[300px] lg:w-[600px]">
+        <div className="items-center flex w-8/12 mx-auto">
             <input onClick={() => handleClick()}
                 placeholder="Say something about how things are going..."
                 className=" w-full px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm"
