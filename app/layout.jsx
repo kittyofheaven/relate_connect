@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Providers from "./components/providers";
 import SigninButton from "./components/signinbutton";
 import Link from "next/link";
+import SearchBar from "./components/searchBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,12 +25,7 @@ export default function RootLayout({ children }) {
               <img className="h-40 " src='https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/realte_connect_logo-removebg-preview.png?alt=media&token=3b61c20a-63a9-4884-9ec5-50fb4169be46' />
             </Link>
 
-            <div className="items-center flex min-w[300px] lg:w-[600px]">
-              <input
-                placeholder="Say something about how things are going..."
-                className=" w-full px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm"
-              ></input>
-            </div>
+            <SearchBar />
             <SigninButton />
           </div>
 

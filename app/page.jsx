@@ -37,6 +37,7 @@ export default function Home() {
   const [userUniqueId, setUserUniqueId] = useState('')
   const [partnerUniqueId, setPartnerUniqueId] = useState('')
   const [categories, setCategories] = useState('')
+  const [partnerCategories, setPartnerCategories] = useState('')
 
 
 
@@ -68,15 +69,37 @@ export default function Home() {
       const user_id = querySnapshot.docs[0].id //docs buat ngambil data dari querySnapshot
 
       // console.log(user_id)
+      const user_1 = doc(db, `users/${user_id}`)
+      const user_1_data = await getDoc(user_1)
+      setPartnerUniqueId(user_1_data.data().partner)
 
-      getPartnerUniqueId(user_id)
+      // getPartnerUniqueId(user_id)
       getCategories(user_id)
       setUserUniqueId(user_id)
 
     }
 
-    userUniqueIdFunc()
+    async function partnerUniqueIdFunc() {
+      if (partnerUniqueId === '') {
 
+      }
+      else {
+        // console.log(partnerUniqueId)
+        const user_ref = doc(db, `users/0tBpIpcFG4alUdfwAwI7`) //!
+        const user_ref_data = await getDoc(user_ref)
+        setPartnerCategories(user_ref_data.data().categories)
+        // console.log(user_ref_data)
+      }
+
+    }
+
+    
+    
+    
+    
+    userUniqueIdFunc()
+    partnerUniqueIdFunc()
+    
     return (
 
       <div>
@@ -105,7 +128,7 @@ export default function Home() {
             <ol type='1'>
               {categories ? tipsData[categories].tips.map((tip) => {
                 return (
-                  <li className='text-lg mt-3'>● {tip}</li>  //! ini ada emot symbol ● barangkali klo lempar error ini kemungkinan bisa jadi penyebab
+                  <li key={tip} className='text-lg mt-3'>● {tip}</li>  //! ini ada emot symbol ● barangkali klo lempar error ini kemungkinan bisa jadi penyebab
                 )
               }) : 'Loading...'}
             </ol>
@@ -124,16 +147,16 @@ export default function Home() {
           <div className='p-5 flex flex-col'>
 
             {/* TITLE START */}
-            <h5 className='text-2xl font-medium mt-3 border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>The {categories.toUpperCase()}</h5>
+            <h5 className='text-2xl font-medium mt-3 border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>The {partnerCategories.toUpperCase()}</h5>
             {/* TITLE END */}
 
             {/* DESCRIPTION START */}
             <p className='text-lg mt-3'>
-              {categories ? tipsData[categories].description : 'Loading...'}
+              {partnerCategories ? tipsData[partnerCategories].description : 'Loading...'}
             </p>
 
             <ol type='1'>
-              {categories ? tipsData[categories].tips.map((tip) => {
+              {partnerCategories ? tipsData[partnerCategories].tips.map((tip) => {
                 return (
                   <li className='text-lg mt-3'>● {tip}</li>  //! ini ada emot symbol ● barangkali klo lempar error ini kemungkinan bisa jadi penyebab
                 )
