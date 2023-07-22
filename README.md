@@ -27,14 +27,20 @@ We use next-js as our framework in this app building
 9. after all of that we're ready to create AI Date planner app
 10. and last but not least we tried to develop AI based chat text rater & date calendar (for date reminder)
 
-   
-
-
-
 ## Challenges we ran into
+Many bugs and error that we run into but proud to say we all have already solved that
 
 ## Accomplishments that we're proud of
+Having our app up and running in this 36 hours hackathon
 
 ## What we learned
+- To work as a teamates
+- How to colaborate more effeciently
+
 
 ## What's next for Relate Connect
+- Integrating the app more between partner
+- Train a better ai for this app
+- Make this app natively mobile (not PWA)
+- add more features that can tighten a realtionship between a partner
+
