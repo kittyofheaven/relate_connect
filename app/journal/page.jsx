@@ -93,7 +93,7 @@ export default function PublicChat() {
 
     return (
         <div>
-            <h1 className='text-4xl text-center'>Journal</h1>
+            <h1 className='text-4xl text-center font-bold'>Start writing on your journal</h1>
 
             <div className='mx-44 mb-16'>
                 <form onSubmit={sendMsg} className='flex justify-center mt-10 mx-10'>
@@ -108,7 +108,7 @@ export default function PublicChat() {
 
                 {chats.map(item => {
                     return (
-                        <div className='flex bg-white border-r-4 border-b-4 rounded-xl p-4 mt-7 mx-52 h-48 min-h-full' key={doc.id}>
+                        <div className='flex bg-white border-r-4 border-b-4 rounded-xl p-4 my-7 mx-52 h-48 min-h-full' key={doc.id}>
                             {console.log(item)}
                             <p>Hazel Handrata : {item.chat}</p>
                             <p className='mt-4 ml-2 text-xs text-red-800'>{timeConverter(item.time.seconds)[3]}:{timeConverter(item.time.seconds)[4]}</p>

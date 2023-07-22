@@ -104,7 +104,7 @@ export default function Home() {
 
       <div>
         <div className='text-center'>
-          <div className='text-5xl my-5'>
+          <div className='text-5xl my-5 '>
             <h5>Hello There, {session.user.name} !</h5>
           </div>
           <div className='my-4'>
@@ -182,7 +182,7 @@ export default function Home() {
                 <h5 className='text-2xl font-medium mt-3 '>AI Text Rater</h5>
                 <p className='text-md mt-3'>Practice with an AI on how you should text
                   your partner, the AI will then rate your responses and in that way, you will be given feedbacks on your responses, that you can improve overtime. </p>
-                <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
+                <a href='/textrater' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
 

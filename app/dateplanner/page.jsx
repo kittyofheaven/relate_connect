@@ -44,10 +44,11 @@ export default function page() {
 
     return (
         <div>
+            <h5 className='text-4xl text-center font-bold mt-6'>Put in your destination and time </h5>
             <form onSubmit={handleForm}>
-                <div className=' flex gap-9 items-center justify-center mt-5'>
-                    <input className='px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm' type="text" placeholder='place ? ex: Tunjungan' />
-                    <input className='px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm' type="text" placeholder='time ? ex: 4pm' />
+                <div className=' flex gap-9 items-center justify-center mt-11'>
+                    <input className='px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm' type="text" placeholder='Place ? e.g: Ancol' />
+                    <input className='px-8 py-2 font-medium border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm' type="text" placeholder='Time ? e.g: 4PM' />
                     <button className='px-8 py-2 bg-pink-500 flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-pink-200 ' type="submit">Create!</button>
                 </div>
             </form>

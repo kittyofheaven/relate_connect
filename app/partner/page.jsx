@@ -86,7 +86,7 @@ export default function page() {
 
         return (
             <div>
-                <h1 className='text-center text-5xl'>Add your partner's ID to start!</h1>
+                <h1 className='text-4xl text-center font-bold mt-28'>Add your partner to start!</h1>
                 <p>{userExist ? ('User Found!') : ('')}</p>
 
                 <form onSubmit={search}>

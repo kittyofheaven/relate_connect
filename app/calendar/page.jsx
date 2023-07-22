@@ -7,8 +7,9 @@ function App() {
 
     return (
         <div>
+            <h1 className='text-4xl text-center font-bold'>Keep upcoming dates on calendar</h1>
             <div className='bg-white rounded-xl shadow-lg mx-80 mb-8'>
-                <div className='p-5 flex flex-col '>
+                <div className='p-5  mt-10 flex flex-col '>
                     {/* TITLE START */}
                     <h5 className='text-2xl font-medium mt-3 border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'> Valentine's Date !</h5>
                     {/* TITLE END */}
