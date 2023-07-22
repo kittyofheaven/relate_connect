@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { useSession } from 'next-auth/react'
@@ -27,11 +27,11 @@ import { tipsData } from './tipsData'
 
 export default function Home() {
 
-  const {data: session} = useSession({
+  const { data: session } = useSession({
     required: true,
     onUnauthenticated: () => {
-        redirect('/profile')
-      }
+      redirect('/profile')
+    }
   })
 
   const [userUniqueId, setUserUniqueId] = useState('')
@@ -39,46 +39,46 @@ export default function Home() {
   const [categories, setCategories] = useState('')
 
 
-  
-  
-  if(session && session.user){
 
-    async function getPartnerUniqueId(id){
+
+  if (session && session.user) {
+
+    async function getPartnerUniqueId(id) {
       const user_1 = doc(db, `users/${id}`)
       const user_1_data = await getDoc(user_1)
       setPartnerUniqueId(user_1_data.data().partner)
-      return(partnerUniqueId)
+      return (partnerUniqueId)
       // console.log(user_1) //bakal return promise doang, bukan data nya
     }
-  
-    async function getCategories(id){
-        const user_1 = doc(db, `users/${id}`)
-        const user_1_data = await getDoc(user_1)
-        setCategories(user_1_data.data().categories)
-        return(categories)
+
+    async function getCategories(id) {
+      const user_1 = doc(db, `users/${id}`)
+      const user_1_data = await getDoc(user_1)
+      setCategories(user_1_data.data().categories)
+      return (categories)
     }
-  
+
     async function userUniqueIdFunc() {
-        
-        const email = session.user.email
-  
-        const user_ref = collection(db, 'users') //collection buat ngambil collection dari firestore
-        const q = query(user_ref, where('email', '==', email), limit(1))
-        const querySnapshot = await getDocs(q) //getDocs buat ngambil data dari query
-        const user_id = querySnapshot.docs[0].id //docs buat ngambil data dari querySnapshot
-  
-        // console.log(user_id)
-  
-        getPartnerUniqueId(user_id)
-        getCategories(user_id)
-        setUserUniqueId(user_id)
-  
+
+      const email = session.user.email
+
+      const user_ref = collection(db, 'users') //collection buat ngambil collection dari firestore
+      const q = query(user_ref, where('email', '==', email), limit(1))
+      const querySnapshot = await getDocs(q) //getDocs buat ngambil data dari query
+      const user_id = querySnapshot.docs[0].id //docs buat ngambil data dari querySnapshot
+
+      // console.log(user_id)
+
+      getPartnerUniqueId(user_id)
+      getCategories(user_id)
+      setUserUniqueId(user_id)
+
     }
-  
+
     userUniqueIdFunc()
 
     return (
-  
+
       <div>
         <div className='text-center'>
           <div className='text-5xl my-5'>
@@ -88,14 +88,15 @@ export default function Home() {
             <p>You are categorized as, </p>
           </div>
         </div>
-        {/* //CARD 2 */}
+
+        {/* BAGIAN USER START */}
         <div className='bg-white rounded-xl shadow-lg mx-24 mb-8'>
           <div className='p-5 flex flex-col'>
-  
+
             {/* TITLE START */}
             <h5 className='text-2xl font-medium mt-3 border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg  hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>The {categories.toUpperCase()}</h5>
             {/* TITLE END */}
-  
+
             {/* DESCRIPTION START */}
             <p className='text-lg mt-3'>
               {categories ? tipsData[categories].description : 'Loading...'}
@@ -110,15 +111,45 @@ export default function Home() {
             </ol>
             {/* DESCRIPTION END */}
 
-  
+
           </div>
         </div>
-  
-  
+        {/* BAGIAN USER END */}
+
+        <div className='my-4 text-center items-center'>
+          <p>While your partner is categorized as, </p>
+        </div>
+        {/* BAGIAN PARTNER START */}
+        <div className='bg-white rounded-xl shadow-lg mx-24 mb-8'>
+          <div className='p-5 flex flex-col'>
+
+            {/* TITLE START */}
+            <h5 className='text-2xl font-medium mt-3 border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>The {categories.toUpperCase()}</h5>
+            {/* TITLE END */}
+
+            {/* DESCRIPTION START */}
+            <p className='text-lg mt-3'>
+              {categories ? tipsData[categories].description : 'Loading...'}
+            </p>
+
+            <ol type='1'>
+              {categories ? tipsData[categories].tips.map((tip) => {
+                return (
+                  <li className='text-lg mt-3'>● {tip}</li>  //! ini ada emot symbol ● barangkali klo lempar error ini kemungkinan bisa jadi penyebab
+                )
+              }) : 'Loading...'}
+            </ol>
+            {/* DESCRIPTION END */}
+
+
+          </div>
+        </div>
+        {/* BAGIAN PARTNER END */}
+
         <div className=' flex min-h-screen min-w-full container items-center justify-between -mt-14'>
           {/* //GRID START */}
           <div className=' grid grid-cols-4 gap-9 '>
-  
+
             {/* //CARD 2 */}
             <div className='bg-white rounded-xl shadow-lg'>
               <div className='p-5 flex flex-col'>
@@ -131,7 +162,7 @@ export default function Home() {
                 <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-4 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
-  
+
             {/* //CARD 1 */}
             <div className='bg-white rounded-xl shadow-lg'>
               <div className='p-5 flex flex-col'>
@@ -143,7 +174,7 @@ export default function Home() {
                 <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-4 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
-  
+
             {/* //CARD 3 */}
             <div className='bg-white rounded-xl shadow-lg'>
               <div className='p-5 flex flex-col'>
@@ -155,7 +186,7 @@ export default function Home() {
                 <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-4 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
-  
+
             {/* //CARD 4 */}
             <div className='bg-white rounded-xl shadow-lg'>
               <div className='p-5 flex flex-col'>
@@ -170,15 +201,15 @@ export default function Home() {
           </div>
           {/* //GRID END */}
         </div>
-  
-  
+
+
         <div className='flex flex-col items-center justify-center'>
           <Link href='/quiz' className=' border-b-4 border-r-4 mb-5 -mt-6 text-center bg-pink-300 text-pink-700 py-2 px-5 rounded-lg font-semibold mt-4 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Retake the tendency Quiz ✨</Link>
         </div>
       </div>
-  
-  
-  
+
+
+
     )
 
   }
