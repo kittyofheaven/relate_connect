@@ -13,7 +13,7 @@ html {
 body {
     background-image: url('https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/IMG_3785.JPG?alt=media&token=b20576e2-48d1-4a1d-b41d-109aa4b4e733');
     background-position: center;
-    background-size: contain; 
+    background-size: cover; 
 
     font-family: 'Poppins', sans-serif;
 }

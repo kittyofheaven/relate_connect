@@ -4,8 +4,9 @@ import Providers from "./components/providers";
 import SigninButton from "./components/signinbutton";
 import Link from "next/link";
 import SearchBar from "./components/searchBar";
+import { Syne } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const syne = Syne({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Relate Connect",
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
 
     <html lang="en">
-      <body className={inter.className}>
+      <body className={syne.className}>
         <Providers>
 
           <div className=" flex items-center justify-between -mt-6 space-x-1 ">

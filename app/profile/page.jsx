@@ -91,11 +91,11 @@ export default function page() {
 
             //* PROFILE PAGE START
 
-            <div className='bg-white rounded-full flex min-h-screen max-w-4xl flex-col items-center p-24 mx-auto mb-8'>
+            <div className='bg-white rounded-full flex min-h-screen max-w-4xl flex-col items-center p-32 mx-auto mb-8'>
 
                 <img src={profpic} height={200} width={200} className='rounded-full m-8' />
 
-                <h3 className='mb-4 text-xl'>Hello There, {session.user.name} !</h3>
+                <h3 className='mb-4 mt-4 text-xl'>Hello There, {session.user.name} !</h3>
                 <button
                     onClick={() => signOut()}
                     className='bg-pink-300 text-pink-700  px-4 py-4 rounded-full m-2 flex transition-all hover:bg-gray-400'>
@@ -108,7 +108,7 @@ export default function page() {
                 )}</p>
                 <div className='items-center text-center mt-36'>
                     <p>Categories : {categories}</p>
-                    <p>Unique id : {userUniqueId}</p>
+                    <p>Unique ID : {userUniqueId}</p>
                 </div>
             </div>
 
