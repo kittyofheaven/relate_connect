@@ -1,41 +1,55 @@
 'use client'
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
-import axios from 'axios';
 
-const options = {
-method: 'POST',
-url: 'https://api.cohere.ai/v1/generate',
-headers: {
-    accept: 'application/json',
-    'content-type': 'application/json',
-    authorization: 'Bearer DWFkWRSVIoP2s9xHZE6i2JUjVRBKTaOAHx21u1PB'
-},
-data: {
-    prompt: "Make a date plan based on data below : Place : Tunjungan Plaza Time : 12 am",
-    model: 'base',
-    max_tokens: 64,
-    length: 200,
-    temperature: 1,
-}};
 
-axios
-.request(options)
-.then(function (response) {
-    console.log(response.data.generations[0]);
-})
-.catch(function (error) {
-    console.error(error);
-});
+
 
 
 
 export default function page() {
 
+    const [AiResult, setAiResult] = useState('')
+
+    async function getAiResult(place, time){
+        const cohere = require('cohere-ai');
+        cohere.init('DWFkWRSVIoP2s9xHZE6i2JUjVRBKTaOAHx21u1PB'); // This is your trial API key
+        (async () => {
+        const response = await cohere.generate({
+            model: '3ec3f15a-0b0a-479c-a479-bbaea8077153-ft',
+            prompt: `make a summarized date plan at the vicinity of ${place} at ${time}`,
+            max_tokens: 1564,
+            temperature: 1,
+            k: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+        });
+        setAiResult(`${response.body.generations[0].text}`);
+        })();
+    }
+    
+    // getAiResult()
+    
+    useEffect(() => {
+        // console.log(AiResult)
+    }, [AiResult])
+
+
+    function handleForm(e){
+        e.preventDefault()
+        getAiResult(e.target[0].value, e.target[1].value)
+    }
 
 
 return (
-    <div>page</div>
+    <div>
+        <form onSubmit={handleForm}>
+            <input type="text" placeholder='place ? ex: Tunjungan'/>
+            <input type="text" placeholder='time ? ex: 4pm' />
+            <button type="submit">Create!</button>
+        </form>
+        <div>{AiResult}</div>
+    </div>
 )
 }
