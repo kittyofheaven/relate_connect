@@ -13,11 +13,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+
     <html lang="en">
       <body className={inter.className}>
         <Providers>
 
-          <div className="border-2 border-emerald-500 flex items-center justify-between -mt-6 space-x-1 ">
+          <div className=" flex items-center justify-between -mt-6 space-x-1 ">
 
             <Link href="/">
               <img className="h-40 " src='https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/realte_connect_logo-removebg-preview.png?alt=media&token=3b61c20a-63a9-4884-9ec5-50fb4169be46' />

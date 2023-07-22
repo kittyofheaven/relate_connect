@@ -29,7 +29,7 @@ export default function SigninButton() {
 
             <div className="ml-auto flex items-center gap-5 mr-4">
                 {/* NOTIFICATION BELL START */}
-                <div className="bg-green-500 flex flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-blue-500 ">
+                <div className="bg-slate-100 flex flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-pink-200 ">
                     <MdOutlineNotificationsNone size={35} />
                 </div>
                 {/* NOTIFICATION BELL END */}
@@ -52,10 +52,10 @@ export default function SigninButton() {
     return (
         <Link href="/profile" className="ml-auto flex items-center">
             <div className="flex gap-5 items-center mr-4">
-                <div className="bg-green-500 flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-blue-500 ">
+                <div className="bg-slate-100 flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-pink-200 ">
                     <MdOutlineNotificationsNone size={35} />
                 </div>
-                <div className="bg-pink-500 flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-blue-500 ">
+                <div className="bg-pink-500 flex items-center p4 border-b-4 border-r-4 border-black rounded-md shadow-lg hover:bg-pink-200  ">
                     <BiUser size={35} />
                 </div>
             </div>
