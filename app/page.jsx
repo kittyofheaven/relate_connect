@@ -16,6 +16,16 @@ export default async function Home() {
   return (
 
     <div>
+      <div className='text-center'>
+        <div className='text-5xl my-5'>
+          <h5>Hello There, "Username" !</h5>
+        </div>
+        <div className='my-4'>
+          <p>You are a "The Tendency", </p>
+        </div>
+      </div>
+
+
       <div className=' flex min-h-screen min-w-full container items-center justify-between -mt-14'>
         {/* //GRID START */}
         <div className=' grid grid-cols-4 gap-9 '>
@@ -24,7 +34,7 @@ export default async function Home() {
           <div className='bg-white rounded-xl shadow-lg'>
             <div className='p-5 flex flex-col'>
               <div className='rounded-xl overflow-hidden  border-b-4 border-r-4 border-black'>
-                <img src='https://www.boredpanda.com/blog/wp-content/uploads/2022/02/103-620262024d41d__700.jpg' alt='' />
+                <img src='https://hips.hearstapps.com/hmg-prod/images/close-up-of-unrecognizable-woman-text-messaging-on-royalty-free-image-1582276818.jpg?crop=0.668xw:1.00xh;0.0442xw,0&resize=1200:*' alt='' />
               </div>
               <h5 className='text-2xl font-medium mt-3 '>AI Text Rater</h5>
               <p className='text-lg mt-3'>Practice with an AI on how you should text
