@@ -206,7 +206,7 @@ export default function Home() {
                 </div>
                 <h5 className='text-2xl font-medium mt-3 '>His/Her Journal</h5>
                 <p className='text-md mt-3'> Sometimes it's hard being honest, but this time it doesn't have to. The journal allows you to write about how your relationship has been going & you could read it again and reflect on it. </p>
-                <a href='#' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
+                <a href='/journal' className='border-b-4 border-r-4 text-center bg-pink-300 text-pink-700 py-2 rounded-lg font-semibold mt-6 hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Explore</a>
               </div>
             </div>
 
