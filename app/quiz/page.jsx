@@ -162,6 +162,9 @@ export default function page({ params }) {
                     })}
                 </div>
 
+                <div className='mt-28 items-center text-center italic'>Don't worry about choosing the wrong option, you can retake the quiz later!
+                </div>
+
                 {activeQuestion === questions.length - 1 ? (
                     <div className='flex items-center justify-center'>
                         <button className='mx-4 mt-10 border-black border-b-4 border-r-4 h-20 w-30 px-10  text-center bg-green-300 text-green-700 py-2 rounded-lg font-semibold hover:bg-green-500 focus:scale-95 transition-all duration-200 ease-out' onClick={() => upResult()}>Finish</button>
