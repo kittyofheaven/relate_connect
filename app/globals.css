@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* change font to poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+
 body {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/FE18445F-B4C7-41AB-A303-FE4FCAF4E9D8.png?alt=media&token=9001df30-588a-448b-b9c7-dd56f6717f0a');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/IMG_3785.JPG?alt=media&token=b20576e2-48d1-4a1d-b41d-109aa4b4e733');
     background-position: center;
     background-size: contain; 
+
+    font-family: 'Poppins', sans-serif;
 }
 
 
