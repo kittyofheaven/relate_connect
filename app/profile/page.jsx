@@ -31,6 +31,8 @@ export default function page() {
     const [partnerUniqueId, setPartnerUniqueId] = useState('')
     const [categories, setCategories] = useState('')
 
+    const [profpic, setProfpic] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png')
+
     if (session && session.user) {
 
         async function getPartnerUniqueId(id) {
@@ -65,7 +67,21 @@ export default function page() {
 
         }
 
+        async function profPicsFunc() {
+
+            const email = session.user.email
+
+            const user_ref = collection(db, 'users') //collection buat ngambil collection dari firestore
+            const q = query(user_ref, where('email', '==', email), limit(1))
+            const querySnapshot = await getDocs(q) //getDocs buat ngambil data dari query
+            // return user image link
+            const userImageLink = await querySnapshot.docs[0].data().image //docs buat ngambil data dari querySnapshot
+
+            setProfpic(userImageLink)
+        }
+
         userUniqueIdFunc()
+        profPicsFunc()
 
 
 
@@ -76,6 +92,9 @@ export default function page() {
             //* PROFILE PAGE START
 
             <div className='bg-white rounded-lg flex min-h-screen max-w-4xl flex-col items-center p-24 mx-auto mb-8'>
+
+                <img src={profpic} height={200} width={200} className='rounded-full m-8'/>
+
                 <h3 className='mb-4'>Hello There! {session.user.name}</h3>
                 <button
                     onClick={() => signOut()}
