@@ -3,10 +3,9 @@
 @tailwind utilities;
 
 body {
-   
-    background: rgb(255, 233, 233);
-    background-repeat: no-repeat;
-
-    }
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/relate-connect.appspot.com/o/FE18445F-B4C7-41AB-A303-FE4FCAF4E9D8.png?alt=media&token=9001df30-588a-448b-b9c7-dd56f6717f0a');
+    background-position: center;
+    background-size: contain; 
+}
 
 
