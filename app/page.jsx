@@ -227,7 +227,7 @@ export default function Home() {
 
 
         <div className='flex flex-col items-center justify-center'>
-          <Link href='/quiz' className=' border-b-4 border-r-4 -mt-6 text-center bg-pink-300 text-pink-700 py-4 px-7 rounded-lg font-semibold  hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Retake the tendency Quiz ✨</Link>
+          <Link href='/quiz' className=' border-b-4 border-r-4 -mt-6 mb-7 text-center bg-pink-300 text-pink-700 py-4 px-7 rounded-lg font-semibold  hover:bg-pink-500 focus:scale-95 transition-all duration-200 ease-out'>Retake the tendency Quiz ✨</Link>
         </div>
       </div>
 
