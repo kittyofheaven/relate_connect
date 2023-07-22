@@ -91,11 +91,11 @@ export default function page() {
 
             //* PROFILE PAGE START
 
-            <div className='bg-white rounded-lg flex min-h-screen max-w-4xl flex-col items-center p-24 mx-auto mb-8'>
+            <div className='bg-white rounded-full flex min-h-screen max-w-4xl flex-col items-center p-24 mx-auto mb-8'>
 
-                <img src={profpic} height={200} width={200} className='rounded-full m-8'/>
+                <img src={profpic} height={200} width={200} className='rounded-full m-8' />
 
-                <h3 className='mb-4'>Hello There! {session.user.name}</h3>
+                <h3 className='mb-4 text-xl'>Hello There, {session.user.name} !</h3>
                 <button
                     onClick={() => signOut()}
                     className='bg-pink-300 text-pink-700  px-4 py-4 rounded-full m-2 flex transition-all hover:bg-gray-400'>
@@ -106,7 +106,7 @@ export default function page() {
                 <p>{partnerUniqueId ? (<p>Partner id : {partnerUniqueId} </p>) : (
                     <Link className='gap-3  bg-pink-300 text-pink-700  px-7 py-4 rounded-full m-2 flex transition-all hover:bg-gray-400' href='/partner'><BsPersonFillAdd size={25}></BsPersonFillAdd> Set your partner</Link>
                 )}</p>
-                <div className='items-center text-center mt-44'>
+                <div className='items-center text-center mt-36'>
                     <p>Categories : {categories}</p>
                     <p>Unique id : {userUniqueId}</p>
                 </div>
