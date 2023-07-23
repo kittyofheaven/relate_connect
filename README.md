@@ -44,3 +44,4 @@ Having our app up and running in this 36 hours hackathon
 - Make this app natively mobile (not PWA)
 - add more features that can tighten a realtionship between a partner
 
+https://youtu.be/6M7O7e_vHYo
